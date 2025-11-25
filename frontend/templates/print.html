@@ -45,22 +45,17 @@
       </tr>
     </thead>
     <tbody>
-      <!-- Placeholder rows -->
+      {% for med in meds %}
       <tr>
-        <td>Medication A</td>
-        <td>10 mg</td>
-        <td>Morning, Evening</td>
-        <td>2025-11-01 – 2025-12-15</td>
-        <td>Sample note</td>
+        <td>{{ med.name }}</td>
+        <td>{{ med.strength or '' }}</td>
+        <td>{{ med.schedule or '' }}</td>
+        <td>—</td>
+        <td>{{ med.notes or '' }}</td>
       </tr>
-      <tr>
-        <td>Medication B</td>
-        <td>5 mg</td>
-        <td>As needed</td>
-        <td>2025-11-10 – </td>
-        <td>PRN for headaches</td>
-      </tr>
+      {% endfor %}
     </tbody>
+
   </table>
 </body>
 </html>
